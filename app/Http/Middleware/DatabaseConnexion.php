@@ -26,7 +26,7 @@ class DatabaseConnexion
         return $next($request);
       }
 
-      $ddb_name = parse_url(str_replace("www.", "", $request->url()), PHP_URL_HOST);
+      $ddb_name = env('DB_DATABASE') ?: parse_url(str_replace("www.", "", $request->url()), PHP_URL_HOST);
       config(['database.connections.onthefly' => [
         'driver' => 'mysql',
         'url' => env('DATABASE_URL'),
