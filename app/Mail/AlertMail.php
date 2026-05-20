@@ -31,7 +31,7 @@ class AlertMail extends Mailable
    */
   public function build()
   {
-    $from = "info@groupemso.com";
+    $from = config('mail.from.address', 'info@groupemso.com');
     Carbon::setLocale('fr');
     setlocale(LC_TIME, 'French');
     return $this->from($from)
