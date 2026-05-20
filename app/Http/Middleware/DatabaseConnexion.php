@@ -22,20 +22,20 @@ class DatabaseConnexion
     public function handle($request, Closure $next)
     {
       // En local (APP_ENV=local), on utilise directement la connexion définie dans .env
-      if (env('APP_ENV') === 'local') {
+      if (app()->environment('local')) {
         return $next($request);
       }
 
-      $ddb_name = env('DB_DATABASE') ?: parse_url(str_replace("www.", "", $request->url()), PHP_URL_HOST);
+      $ddb_name = config('database.connections.mysql.database') ?: parse_url(str_replace("www.", "", $request->url()), PHP_URL_HOST);
       config(['database.connections.onthefly' => [
         'driver' => 'mysql',
-        'url' => env('DATABASE_URL'),
-        'host' => env('DB_HOST', '127.0.0.1'),
-        'port' => env('DB_PORT', '3306'),
+        'url' => config('database.connections.mysql.url'),
+        'host' => config('database.connections.mysql.host', '127.0.0.1'),
+        'port' => config('database.connections.mysql.port', '3306'),
         'database' => $ddb_name,
-        'username' => env('DB_USERNAME', 'root'),
-        'password' => env('DB_PASSWORD', 'tomay46'),
-        'unix_socket' => env('DB_SOCKET', ''),
+        'username' => config('database.connections.mysql.username', 'root'),
+        'password' => config('database.connections.mysql.password', ''),
+        'unix_socket' => config('database.connections.mysql.unix_socket', ''),
         'charset' => 'utf8mb4',
         'collation' => 'utf8mb4_unicode_ci',
         'prefix' => '',
