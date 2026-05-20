@@ -33,16 +33,16 @@ class HomeController extends Controller
     $booking->load("slot.site");
     $page = Page::first();
     $mailMSO = "m.rodolphe@groupemso.fr";
-    // try {
+    try {
       Mail::to($booking->email)->send(new ConfirmationMail($booking, $page));
-    // } catch (\Throwable $th) {
-      // throw $th;
-    // }
-    // try {
+    } catch (\Throwable $th) {
+      \Log::error('Confirmation mail failed: ' . $th->getMessage());
+    }
+    try {
       Mail::to($mailMSO)->send(new AlertMail($booking));
-    // } catch (\Throwable $th) {
-      // throw $th;
-    // }
+    } catch (\Throwable $th) {
+      \Log::error('Alert mail failed: ' . $th->getMessage());
+    }
     return view('confirm', [
       "booking" => $booking,
       "page" => $page
