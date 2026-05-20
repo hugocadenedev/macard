@@ -6,8 +6,7 @@
 /public/opel
 /public/ds
 /public/ford
-/public/js
-/public/css
+
 /public/storage
 /storage/*.key
 /vendor
