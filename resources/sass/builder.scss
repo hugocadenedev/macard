@@ -1,0 +1,75 @@
+@import "main.scss";
+
+.gjs-editor-cont {
+  height: 100vh !important;
+}
+
+.gjs-pn-panel.gjs-pn-devices-c.gjs-one-bg.gjs-two-color {
+  padding: 2px;
+}
+// body, html{ height: 100%; margin: 0;}
+
+//       .gjs-block-svg {
+//           width: 61%;
+//       }
+
+//       .gjs-block-svg-path {
+//         fill: white;
+//       }
+
+// .properties {
+//   flex: 0 0 400px;
+//   height: 100vh;;
+// }
+
+// .builder {
+//   display: flex;
+// }
+
+// .offer-page {
+//   flex: 1 1 100%;
+// }
+
+// .gjs-block {
+//   width: auto;
+//   height: auto;
+//   min-height: auto;
+// }
+
+// .editor-row {
+//   display: flex;
+//   justify-content: flex-start;
+//   align-items: stretch;
+//   flex-wrap: nowrap;
+//   // height: 300px;
+// }
+
+// .editor-canvas {
+//   flex-grow: 1;
+// }
+
+// .panel__right {
+//   flex-basis: 400px;
+//   min-height: 100%;
+//   padding-top: 40px;
+//   position: relative;
+//   overflow-y: auto;
+//   background-color: #444444;
+// }
+
+// .gjs-editor .gjs-cv-canvas {
+//   background-color: rgba(0,0,0,0.15);
+//   box-sizing: border-box;
+//   width: calc(100% - 80px);
+//   height: calc(100% - 40px);
+//   bottom: 0;
+//   overflow: hidden;
+//   z-index: 1;
+//   position: absolute;
+//   left: 40px;
+//   top: 40px;
+//   right: 40px;
+// }
+// .panel__switcher {
+//   position: initial;
+// }

@@ -1,0 +1,328 @@
+// Fonts
+@import url('https://fonts.googleapis.com/css?family=Nunito');
+
+// Variables
+@import 'variables';
+
+// Bootstrap
+@import '~bootstrap/scss/bootstrap';
+@import "toastr";
+@import './website.scss';
+@import './builder.scss';
+
+@font-face {
+  font-family: "CITROEN";
+  font-weight: 400;
+  src: url('../font/CITROEN.ttf') format('truetype');
+}
+@font-face {
+  font-family: "DS";
+  font-weight: 400;
+  src: url('../font/DS.ttf') format('truetype');
+}
+@font-face {
+  font-family: "FORD";
+  font-weight: 400;
+  src: url('../font/FORD.otf') format('opentype');
+}
+@font-face {
+  font-family: "KIA";
+  font-weight: 400;
+  src: url('../font/KIA.otf') format('opentype');
+}
+@font-face {
+  font-family: "MAZDA";
+  font-weight: 400;
+  src: url('../font/MAZDA.otf') format('opentype');
+}
+@font-face {
+  font-family: "PEUGEOT";
+  font-weight: 400;
+  src: url('../font/PEUGEOT.otf') format('opentype');
+}
+@font-face {
+  font-family: "OPEL";
+  font-weight: 400;
+  src: url('../font/OPEL.otf') format('opentype');
+}
+
+@font-face {
+  font-family: "Custom";
+  font-weight: 400;
+  src: url('../font/MazdaType-Regular.otf') format('opentype');
+}
+
+@font-face {
+  font-family: "Custom";
+  font-weight: 600;
+  src: url('../font/MazdaType-Medium.otf') format('opentype');
+}
+
+@font-face {
+  font-family: "Custom";
+  font-weight: 700;
+  src: url('../font/MazdaType-Bold.otf') format('opentype');
+}
+
+.row-between {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.row-around {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.row-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.col-between {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.col-around {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.col-center {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.fw-bold {
+  font-weight: bold;
+}
+
+.flex-1 {
+  flex: 1;
+}
+
+.row-flex {
+  display: flex;
+  align-items: center;
+}
+
+.row-end {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+.home-body {
+  min-height: 100vh;
+}
+
+.navbar {
+  box-shadow: 0 3px 25px 0 rgba(62, 69, 80, 0.12);
+  background-color: #4a77d2;
+  .nav-link {
+    color: white;
+    opacity: 0.9;
+    &.active {
+      font-weight: bold;
+      opacity: 1;
+    }
+    &.active {
+      font-weight: bold;
+      opacity: 1;
+    }
+  }
+}
+
+.card {
+  box-shadow: 0 3px 25px 0 rgba(62, 69, 80, 0.12);
+  border: 0;
+  border-radius: 8px;
+  .card-header {
+    border-radius: 8px;
+    background-color: transparent;
+    border: 0;
+    font-weight: bold;
+  }
+  .card-footer {
+    border-radius: 8px;
+    background-color: transparent;
+    border: 0;
+  }
+}
+
+.table {
+  thead {
+    th {
+      border: 0;
+    }
+
+  }
+}
+
+.pagination {
+  margin-bottom: 0;
+}
+
+.fc-next-button.fc-button.fc-button-primary, .fc-prev-button.fc-button.fc-button-primary, .fc .fc-button-primary:focus {
+  background-color: transparent !important;
+  border: 0 !important;
+  color: $primary !important;
+  box-shadow: none !important;
+}
+
+.fc.fc-media-screen {
+  // border: 0 !important;
+  // box-shadow: 0 2px 10px 0 #3e3d4224;
+  // padding-top: 1rem;
+  border-radius: 8px;
+  .fc-scrollgrid {
+    // border: 0 !important;
+  }
+}
+
+.fc-theme-standard td, .fc-theme-standard th {
+  // border: 0 !important;
+}
+
+.fc-daygrid-day-number {
+  font-size: 1.2rem;
+}
+
+.fc-highlight {
+  border-radius: 4px;
+}
+
+.fc-daygrid-day-frame.fc-scrollgrid-sync-inner {
+  display: flex;
+}
+.fc td, .fc-col-header-cell {
+  // border: 0 !important;
+}
+.fc-scrollgrid-sync-inner {
+  padding: 0.5rem 0;
+}
+
+.fc-daygrid-day-top {
+  margin: auto;
+}
+
+.fc-day:hover {
+  background-color: rgba($primary, 0.1);
+}
+
+.fc-daygrid-day-number {
+  cursor: pointer;
+}
+
+.fc-daygrid-day-number, .fc-col-header-cell-cushion  {
+  color: #3e4450 !important;
+}
+
+.btn  {
+  padding: 0.375rem 2rem;
+}
+
+.form-control {
+  transition: 200ms;
+  padding: 0.375rem 1rem;
+  border-radius: 4px;
+  &:focus {
+    box-shadow: none;
+    border: 1px solid $blue;
+  }
+}
+
+
+.booking {
+  text-align: center;
+  padding: 1rem;
+  border-radius: 4px;
+  background-color: $light;
+  &.free {
+    background-color: rgba($success, 0.4);
+    cursor: pointer;
+    &.selected {
+      background-color: $primary;
+      color: white;
+      &:hover {
+        background-color: $primary;
+      }
+    }
+    &:hover {
+      background-color: rgba($primary, 0.5);
+    }
+  }
+}
+
+.car-btn {
+  padding: 1rem;
+  transition: 200ms;
+  border-radius: 8px;
+  border: 1px solid transparent;
+  cursor: pointer;
+  &:hover {
+    background-color: rgba($primary, 0.1);
+  }
+  &.selected {
+    background-color: rgba($primary, 0.1);
+    border: 1px solid #cbcbff;
+  }
+}
+
+.confirm-message {
+  color: $success;
+  font-weight: 600;
+  text-align: center;
+}
+
+.bg-login {
+  background: linear-gradient(-15deg, #4a77d2, #2f4c87);
+}
+
+.title-slot {
+  padding: 1rem;
+  color: white;
+  background-color: #3e4450;
+  border-radius: 8px 0 0 0;
+  margin: -1.25rem 0 1rem -1.25rem;
+}
+
+input[type="date"] {
+  max-width: 180px;
+}
+
+.container {
+  max-width: 1400px;
+}
+
+.has-event {
+  background-color: rgba($success, 0.5);
+}
+
+.clear-search {
+  position: absolute;
+  top: 50%;
+  right: 2.5rem;
+  transform: translateY(-50%);
+  color: $blue;
+  padding: 0.5rem;
+  cursor: pointer;
+}
+
+.form-check-label {
+  color: $gray-600;
+}

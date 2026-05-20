@@ -1,0 +1,135 @@
+.banner {
+  height: 400px;
+  background-position: center;
+  background-size: cover;
+}
+
+.banner-custom {
+  height: 500px;
+  background-position: center;
+  background-size: cover;
+}
+
+.banner-mazda-custom {
+  height: 600px;
+  background-position: center;
+  background-size: cover;
+}
+
+.banner-custom-mazda2 {
+  height: 500px;
+  background-position: right;
+  background-size: cover;
+}
+
+@include media-breakpoint-down(md) {
+  .banner-custom {
+    height: 300px;
+  }
+  .banner {
+    height: 300px;
+  }
+  .banner-mazda-custom {
+    height: 400px;
+  }
+  .banner-custom-mazda2 {
+    .p-5 {
+      padding-left: 1rem !important;
+      padding-right: 1rem !important;
+    }
+  }
+}
+
+@include media-breakpoint-down(sm) {
+  .banner-custom {
+    height: 200px;
+  }
+  .banner {
+    height: 250px;
+  }
+  .booking-container {
+    padding: 0;
+  }
+  .fc-media-screen {
+    margin: 0 -1.25rem;
+  }
+  h5 {
+    text-align: center;
+  }
+  .site-btn {
+    margin: 0 1rem;
+  }
+  h1, .h1 {
+    font-size: 2rem;
+  }
+}
+
+.title {
+  font-weight: bold;
+}
+
+$back-color: #0f1012;
+
+.bg-body {
+  // background: linear-gradient(0deg, $back-color, $back-color, $back-color, $back-color, #00000000);
+}
+
+.booking-container {
+  padding-bottom: 60px;
+  @extend .container;
+}
+
+.card {
+  transition: 500ms ease;
+  &.focused {
+    transform: scale(1.2);
+  }
+}
+
+.site-btn {
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  padding: 1rem;
+  cursor: pointer;
+  border: 1px solid #d0e1f1;
+  .site-name {
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+  }
+  &:hover {
+    background-color: rgb(237 240 250);
+  }
+  .site-address {
+    margin-top: 1rem;
+  }
+  .divider {
+    background-color: $primary;
+    height: 4px;
+    border-radius: 15px;
+    width: 40px;
+    margin: 0 auto;
+  }
+  &.selected {
+    background-color: $primary;
+    color: white;
+    .divider {
+      background-color: white;
+    }
+  }
+}
+
+.presentation {
+  white-space: pre-line;
+  max-width: 900px;
+}
+
+.header {
+  padding: 60px 0;
+}
+
+
+
+.footer {
+  height: 80px;
+  background-color: #202224;
+}
