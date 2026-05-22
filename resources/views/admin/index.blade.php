@@ -107,14 +107,17 @@
                   @endforeach
                 </select>
               </td>
-              <td>
-                <form style="width: 40px; text-align: center;" method="post" action="/api/bookings/{{$booking->id}}">
-                  @csrf
-                  @method('DELETE')
-                  <button onclick="return confirm('Etes vous sur de vouloir supprimer cette réservation ?')" type="submit" class="text-danger btn btn-link px-0">
-                    <i class="fas fa-times"></i>
-                  </button>
-                </form>
+              <td style="width: 40px; text-align: center;">
+                <button
+                  type="button"
+                  class="text-danger btn btn-link px-0"
+                  data-toggle="modal"
+                  data-target="#deleteModal"
+                  data-booking-id="{{$booking->id}}"
+                  data-booking-name="{{$booking->firstname}} {{$booking->lastname}}"
+                >
+                  &times;
+                </button>
               </td>
             </tr>
           @endforeach
@@ -123,4 +126,76 @@
     </div>
   </div>
 </div>
+
+{{-- Modal double confirmation suppression réservation --}}
+<div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="deleteModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="deleteModalLabel">Supprimer la réservation</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Fermer">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+
+      {{-- Étape 1 --}}
+      <div id="delete-step-1">
+        <div class="modal-body">
+          <p>Êtes-vous sûr de vouloir supprimer la réservation de <strong id="delete-booking-name"></strong> ?</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Annuler</button>
+          <button type="button" class="btn btn-warning" id="btn-step-2">Continuer</button>
+        </div>
+      </div>
+
+      {{-- Étape 2 --}}
+      <div id="delete-step-2" style="display:none;">
+        <div class="modal-body">
+          <div class="alert alert-danger mb-0">
+            <strong>Attention !</strong> Cette action est irréversible. La réservation sera définitivement supprimée.
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" id="btn-back-step-1">Retour</button>
+          <form id="delete-booking-form" method="post" action="">
+            @csrf
+            @method('DELETE')
+            <button type="submit" class="btn btn-danger">Supprimer définitivement</button>
+          </form>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    $('#deleteModal').on('show.bs.modal', function (event) {
+      var button = $(event.relatedTarget);
+      var bookingId = button.data('booking-id');
+      var bookingName = button.data('booking-name');
+
+      // Réinitialise à l'étape 1
+      $('#delete-step-1').show();
+      $('#delete-step-2').hide();
+
+      // Remplit les données
+      $('#delete-booking-name').text(bookingName);
+      $('#delete-booking-form').attr('action', '/api/bookings/' + bookingId);
+    });
+
+    $('#btn-step-2').on('click', function () {
+      $('#delete-step-1').hide();
+      $('#delete-step-2').show();
+    });
+
+    $('#btn-back-step-1').on('click', function () {
+      $('#delete-step-2').hide();
+      $('#delete-step-1').show();
+    });
+  });
+</script>
+
 @endsection
