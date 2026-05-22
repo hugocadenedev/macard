@@ -178,13 +178,6 @@ margin: 20px 0
     <p style="font-size: 16px; line-height: 1.2; word-break: break-word; text-align: center; mso-line-height-alt: 17px; margin: 0;">De {{$booking->slot->start->setTimezone("Europe/Paris")->format("H\hi à ") . $booking->slot->end->setTimezone("Europe/Paris")->format("H\hi")}}</p>
     </div>
     </div>
-    <div style="color:#4a77d2;font-family:Arial, Helvetica Neue, Helvetica, sans-serif;line-height:1.2;padding-top:10px;padding-right:10px;padding-bottom:10px;padding-left:10px;">
-    <div style="line-height: 1.2; font-size: 20px; color: #4a77d2; font-family: Arial, Helvetica Neue, Helvetica, sans-serif; mso-line-height-alt: 14px;">
-		<p style="text-align: center; line-height: 1.2; word-break: break-word; mso-line-height-alt: 14px; margin: 0;">VOTRE CONSEILLER COMMERCIAL</p>
-		<p style="text-align: center; line-height: 1.2; word-break: break-word; mso-line-height-alt: 14px; margin: 0;">
-			<strong>{{$page->email_site}}</strong>
-		</p>
-    </div>
   </div>
 </div>
 
