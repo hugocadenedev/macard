@@ -185,7 +185,7 @@ margin: 20px 0
 <!--[if mso]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding-right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 10px; font-family: Arial, sans-serif"><![endif]-->
 <div style="color:#555555;font-family:Arial, Helvetica Neue, Helvetica, sans-serif;line-height:1.2;padding-top:10px;padding-right:10px;padding-bottom:10px;padding-left:10px;">
 <div style="line-height: 1.2; font-size: 12px; color: #555555; font-family: Arial, Helvetica Neue, Helvetica, sans-serif; mso-line-height-alt: 14px;">
-<p style="font-size: 14px; line-height: 1.2; word-break: break-word; text-align: center; mso-line-height-alt: 17px; margin: 0;">Un empêchement, un changement ?<br/>Si vous souhaitez changer de date ou d'horaire, vous pouvez procéder à une nouvelle réservation en nous contactant via l'adresse mail suivante : relations.clients@groupemacard.fr</p>
+<p style="font-size: 14px; line-height: 1.2; word-break: break-word; text-align: center; mso-line-height-alt: 17px; margin: 0;">Un empêchement, un changement ?<br/>Si vous souhaitez changer de date ou d'horaire, vous pouvez procéder à une nouvelle réservation en nous contactant via l'adresse mail suivante : <a href="mailto:relations.clients@groupemacard.fr" style="color: #4a77d2;">relations.clients@groupemacard.fr</a></p>
 </div>
 </div>
 <!--[if mso]></td></tr></table><![endif]-->
